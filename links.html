@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./links.html">Части доклада</a></li><li class="breadcrumb-item"><a href="./links.html">Полезные материалы</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./examples-and-tools.html">Части доклада</a></li><li class="breadcrumb-item"><a href="./links.html">Полезные материалы</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -144,6 +144,12 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./examples-and-tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Примеры и инструменты</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./links.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Полезные материалы</span></a>
   </div>
@@ -156,12 +162,24 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#kappa-архитектура" id="toc-kappa-архитектура" class="nav-link active" data-scroll-target="#kappa-архитектура">Kappa архитектура</a></li>
+  <li><a href="#технологии-для-distribution-уровня" id="toc-технологии-для-distribution-уровня" class="nav-link" data-scroll-target="#технологии-для-distribution-уровня">Технологии для Distribution-уровня</a></li>
+  <li><a href="#технологии-для-speed-уровня" id="toc-технологии-для-speed-уровня" class="nav-link" data-scroll-target="#технологии-для-speed-уровня">Технологии для Speed-уровня</a></li>
+  <li><a href="#технологии-для-serving-уровня" id="toc-технологии-для-serving-уровня" class="nav-link" data-scroll-target="#технологии-для-serving-уровня">Технологии для Serving-уровня</a>
+  <ul class="collapse">
+  <li><a href="#технологии-для-реализации-kappa-архитектуры" id="toc-технологии-для-реализации-kappa-архитектуры" class="nav-link" data-scroll-target="#технологии-для-реализации-kappa-архитектуры">Технологии для реализации Kappa архитектуры</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./links.html">Части доклада</a></li><li class="breadcrumb-item"><a href="./links.html">Полезные материалы</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./examples-and-tools.html">Части доклада</a></li><li class="breadcrumb-item"><a href="./links.html">Полезные материалы</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Полезные материалы</h1>
 </div>
@@ -180,8 +198,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="kappa-архитектура" class="level2">
+<h2 class="anchored" data-anchor-id="kappa-архитектура">Kappa архитектура</h2>
+<ol type="1">
+<li><a href="https://habr.com/ru/companies/otus/articles/769350/">Habr - Архитектурный паттерн для обработки больших данных: Kappa</a></li>
+<li><a href="https://www.youtube.com/watch?v=Ac-XhNB0YrM">Егор Матешук – Обзор Lambda- и Kappa-архитектур</a></li>
+<li><a href="https://bigdataschool.ru/blog/kappa-architecture.html">Big Data School - Что такое Каппа-архитектура: альтернатива Лямбда для потоков Big Data</a></li>
+</ol>
+</section>
+<section id="технологии-для-distribution-уровня" class="level2">
+<h2 class="anchored" data-anchor-id="технологии-для-distribution-уровня">Технологии для Distribution-уровня</h2>
+<ol type="1">
+<li><a href="https://habr.com/ru/companies/slurm/articles/550934/">Habr - Apache Kafka: основы технологии</a></li>
+<li><a href="https://www.youtube.com/watch?v=pJnx_O3yy8U">Вадим Опольский - Проблемы приземления данных из Kafka и их решение на Apache Flink</a></li>
+</ol>
+</section>
+<section id="технологии-для-speed-уровня" class="level2">
+<h2 class="anchored" data-anchor-id="технологии-для-speed-уровня">Технологии для Speed-уровня</h2>
+<ol type="1">
+<li><a href="https://habr.com/ru/companies/ru_mts/articles/772898/">Habr - Введение в Apache Flink: осваиваем фреймворк на реальных примерах</a></li>
+<li><a href="https://wints.github.io/flink-web/introduction.html">Wints - Introduction to Apache Flink</a></li>
+<li><a href="https://www.youtube.com/watch?v=WwvpsqyWsc4">Caito Scherr - Building a Python Data Pipeline with Apache Flink</a></li>
+<li><a href="https://habr.com/ru/articles/451160/">Habr - Apache Kafka и потоковая обработка данных с помощью Spark Streaming</a></li>
+<li><a href="https://spark-school.ru/blog/spark-streaming/">Spark School - Что такое Spark Streaming и для чего он нужен</a></li>
+<li><a href="https://bigdataschool.ru/blog/choice-factors-4-big-data-streaming.html">Big Data School - Apache Kafka Streams, Spark Streaming, Flink, Storm или Samza: что и когда выбирать для обработки потоков Big Data</a></li>
+</ol>
+</section>
+<section id="технологии-для-serving-уровня" class="level2">
+<h2 class="anchored" data-anchor-id="технологии-для-serving-уровня">Технологии для Serving-уровня</h2>
+<ol type="1">
+<li><a href="https://habr.com/ru/companies/odnoklassniki/articles/420469">Habr - Особенности использования Druid на примере Одноклассников</a></li>
+<li><a href="https://bigdataschool.ru/wiki/kudu">Big Data School - Kudu</a></li>
+</ol>
+<section id="технологии-для-реализации-kappa-архитектуры" class="level3">
+<h3 class="anchored" data-anchor-id="технологии-для-реализации-kappa-архитектуры">Технологии для реализации Kappa архитектуры</h3>
+<ol type="1">
+<li><a href="https://habr.com/ru/companies/timeweb/articles/783758/">Habr - Построение архитектур для обработки данных в режиме реального времени при помощи Apache Kafka, Flink и Druid</a></li>
+<li><a href="https://www.youtube.com/watch?v=mDNGIqV2ThM">Ruhollah Farchtchi - Building Real Time BI Systems with Kafka, Spark &amp; Kudu</a></li>
+</ol>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -265,7 +323,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/ML-Big-Data-Kappa\.github\.io\/ML-Big-Data-Kappa\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
