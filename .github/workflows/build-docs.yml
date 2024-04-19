@@ -26,7 +26,7 @@ jobs:
           quarto convert notebooks/examples-and-tools.ipynb -o docs/examples-and-tools.qmd
       - name: Generate html
         run: |
-          poetry run quarto render docs --to html
+          quarto render docs --to html
       - name: Publish to GitHub Pages
         run: |
           git config --global user.email "daniil.solo1723@gmail.com"
