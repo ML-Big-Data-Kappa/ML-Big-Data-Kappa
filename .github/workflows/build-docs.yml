@@ -32,6 +32,6 @@ jobs:
           git config --global user.email "daniil.solo1723@gmail.com"
           git config --global user.name "Daniil-Solo"
           cd docs
-          poetry run quarto publish gh-pages --no-browser --no-render
+          quarto publish gh-pages --no-browser --no-render
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
