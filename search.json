@@ -1,0 +1,129 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "О докладе",
+    "section": "",
+    "text": "Доклад подготовили студенты магистратуры AI Talent Hub:\n\nЧекалина Нина\nКарнаухова Виктория\nСоловьев Даниил"
+  },
+  {
+    "objectID": "links.html",
+    "href": "links.html",
+    "title": "Полезные материалы",
+    "section": "",
+    "text": "Habr - Архитектурный паттерн для обработки больших данных: Kappa\nЕгор Матешук – Обзор Lambda- и Kappa-архитектур\nBig Data School - Что такое Каппа-архитектура: альтернатива Лямбда для потоков Big Data",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Полезные материалы"
+    ]
+  },
+  {
+    "objectID": "links.html#kappa-архитектура",
+    "href": "links.html#kappa-архитектура",
+    "title": "Полезные материалы",
+    "section": "",
+    "text": "Habr - Архитектурный паттерн для обработки больших данных: Kappa\nЕгор Матешук – Обзор Lambda- и Kappa-архитектур\nBig Data School - Что такое Каппа-архитектура: альтернатива Лямбда для потоков Big Data",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Полезные материалы"
+    ]
+  },
+  {
+    "objectID": "links.html#технологии-для-distribution-уровня",
+    "href": "links.html#технологии-для-distribution-уровня",
+    "title": "Полезные материалы",
+    "section": "Технологии для Distribution-уровня",
+    "text": "Технологии для Distribution-уровня\n\nHabr - Apache Kafka: основы технологии\nВадим Опольский - Проблемы приземления данных из Kafka и их решение на Apache Flink",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Полезные материалы"
+    ]
+  },
+  {
+    "objectID": "links.html#технологии-для-speed-уровня",
+    "href": "links.html#технологии-для-speed-уровня",
+    "title": "Полезные материалы",
+    "section": "Технологии для Speed-уровня",
+    "text": "Технологии для Speed-уровня\n\nHabr - Введение в Apache Flink: осваиваем фреймворк на реальных примерах\nWints - Introduction to Apache Flink\nCaito Scherr - Building a Python Data Pipeline with Apache Flink\nHabr - Apache Kafka и потоковая обработка данных с помощью Spark Streaming\nSpark School - Что такое Spark Streaming и для чего он нужен\nBig Data School - Apache Kafka Streams, Spark Streaming, Flink, Storm или Samza: что и когда выбирать для обработки потоков Big Data",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Полезные материалы"
+    ]
+  },
+  {
+    "objectID": "links.html#технологии-для-serving-уровня",
+    "href": "links.html#технологии-для-serving-уровня",
+    "title": "Полезные материалы",
+    "section": "Технологии для Serving-уровня",
+    "text": "Технологии для Serving-уровня\n\nHabr - Особенности использования Druid на примере Одноклассников\nBig Data School - Kudu\n\n\nТехнологии для реализации Kappa архитектуры\n\nHabr - Построение архитектур для обработки данных в режиме реального времени при помощи Apache Kafka, Flink и Druid\nRuhollah Farchtchi - Building Real Time BI Systems with Kafka, Spark & Kudu",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Полезные материалы"
+    ]
+  },
+  {
+    "objectID": "examples-and-tools.html",
+    "href": "examples-and-tools.html",
+    "title": "Примеры и инструменты",
+    "section": "",
+    "text": "Code\nimport matplotlib.pyplot as plt\nfrom PIL import Image\n\nFORMAT = \"jpg\"\nTEMP_DIR = \"./temp/\"\n\n\ndef show_image(image_path: str, fig_size: tuple[int, int]) -&gt; None:\n  fig = plt.figure(figsize=fig_size)\n  ax = fig.add_subplot(111)\n  img = Image.open(image_path)\n  ax.imshow(img)\n  ax.axes.get_xaxis().set_visible(False)\n  ax.axes.get_yaxis().set_visible(False)\n  ax.spines['top'].set_visible(False)\n  ax.spines['right'].set_visible(False)\n  ax.spines['bottom'].set_visible(False)\n  ax.spines['left'].set_visible(False)\n  plt.show()",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Примеры и инструменты"
+    ]
+  },
+  {
+    "objectID": "examples-and-tools.html#принципиальное-отличие-kappa-и-lambda",
+    "href": "examples-and-tools.html#принципиальное-отличие-kappa-и-lambda",
+    "title": "Примеры и инструменты",
+    "section": "Принципиальное отличие Kappa и Lambda",
+    "text": "Принципиальное отличие Kappa и Lambda\n\nПример\nОт пользователей нашего сайта в больших количествах идут различные события:\n\nклики\nпереходы по ссылкам\nфокусировка на определенных элементах интерфейса\nпрочие события\n\nБизнесу интересно в режиме реального времени анализировать эти события, например, смотреть на то как меняется количество кликов.\n\n\nLambda-архитектура\nДанная архитектура образована несколькими слоями и представлена на рисунке Figure 1:\n\nDistribution Layer - источник данных, обычно это шина сообщений, которая пополняется пользовательскими событиями\nBatch Layer - пакетная обработка данных, в этом слое события заливаются в хранилище сырых данных и раз в определенный период времени запускается обработка имеющихся данных для получения точных значений агрегатов (например, количество пользовательских взаимодействий по каждому типу событий)\nSpeed Layer - потоковая обработка данных, в этом слое события обрабатываются по мере их появления (для данного примера это простое увеличение счетчика для каждого типа события)\nServing Layer - хранение агрегированных данных, к которым обращается аналитическая система или BI-инструмент\n\nBatch Layer и Speed Layer реализуют одну и ту же логику. Batch-слой позволяет получить точные данные, а Speed-слой неплохую интерполяцию в промежутке между пересчетами Batch’ей. Полный пересчет агрегаций легко реализуется с помощью Batch-слоя.\n\n\nCode\nfrom diagrams import Diagram, Cluster, Edge\nfrom diagrams.programming.flowchart import PredefinedProcess\nfrom diagrams.programming.flowchart import Delay\nfrom diagrams.programming.flowchart import Display\nfrom diagrams.programming.flowchart import Database\n\n\nfilename = TEMP_DIR + \"lambda-basic\"\n\nwith Diagram(\"\", show=False, direction=\"LR\", filename=filename, outformat=FORMAT, curvestyle=\"curved\"):\n  with Cluster(\"Distribution layer\", direction=\"LR\"):\n    unified_log = Delay(\"Unified Log\")\n  with Cluster(\"Speed layer\", direction=\"LR\"):\n    streaming_framework = PredefinedProcess(\"Streaming Framework\")\n  with Cluster(\"Batch layer\", direction=\"LR\"):\n    consumer = PredefinedProcess(\"Consumer\")\n    raw_data_db = Database(\"Raw Data Database\")\n    batch_framework = PredefinedProcess(\"Batch Processing Framework\")\n  with Cluster(\"Serving layer\", direction=\"LR\"):\n    db = Database(\"Database\")\n  unified_log &gt;&gt; Edge(label=\"Event\") &gt;&gt; streaming_framework\n  unified_log &gt;&gt; Edge(label=\"Event\") &gt;&gt; consumer\n  streaming_framework &gt;&gt; Edge(label=\"Approximate Aggregate\") &gt;&gt; db\n  consumer &gt;&gt; Edge(label=\"Event\") &gt;&gt; raw_data_db\n  batch_framework &gt;&gt; Edge(label=\"Aggregation query\") &gt;&gt; raw_data_db\n  batch_framework &gt;&gt; Edge(label=\"Exact Aggregate\") &gt;&gt; db\n  with Cluster(\"Analytics\", direction=\"LR\"):\n    bi = Display(\"BI-tool\")\n    db &lt;&lt; Edge(label=\"Query\") &lt;&lt; bi\n\nshow_image(f\"{filename}.{FORMAT}\", (12, 10))\n\n\n\n\n\n\n\n\nFigure 1: Lambda Архитектура\n\n\n\n\n\n\n\nKappa-архитектура\nДанная архитектура отличается от предыдущей отсутствием Batch-слоя и представлена на рисунке Figure 2:\n\nDistribution Layer - источник данных, обычно это шина сообщений, которая пополняется пользовательскими событиями\nSpeed Layer - потоковая обработка данных, в этом слое события обрабатываются по мере их появления (для данного примера это простое увеличение счетчика для каждого типа события)\nServing Layer - хранение агрегированных данных, к которым обращается аналитическая система или BI-инструмент\n\nПолный пересчет возможен лишь частично, так как отсутствует полное хранение сырых данных. Пересчет происходит засчет повторного прогона событий из источника данных через Speed-слой.\n\n\nCode\nfrom diagrams import Diagram, Cluster, Edge\nfrom diagrams.programming.flowchart import PredefinedProcess\nfrom diagrams.programming.flowchart import Delay\nfrom diagrams.programming.flowchart import Display\nfrom diagrams.programming.flowchart import Database\n\n\nfilename = TEMP_DIR + \"kappa-basic\"\n\nwith Diagram(\"\", show=False, direction=\"LR\", filename=filename, outformat=FORMAT, curvestyle=\"ortho\"):\n  with Cluster(\"Distribution layer\", direction=\"LR\"):\n    unified_log = Delay(\"Unified Log\")\n  with Cluster(\"Speed layer\", direction=\"LR\"):\n    streaming_framework = PredefinedProcess(\"Streaming Framework\")\n  with Cluster(\"Serving layer\", direction=\"LR\"):\n    db = Database(\"Database\")\n  unified_log &gt;&gt; Edge(label=\"Event\") &gt;&gt; streaming_framework\n  streaming_framework &gt;&gt; Edge(label=\"Aggregate\") &gt;&gt; db\n  with Cluster(\"Analytics\", direction=\"LR\"):\n    bi = Display(\"BI-tool\")\n    db &lt;&lt; Edge(label=\"Query\") &lt;&lt; bi\n\nshow_image(f\"{filename}.{FORMAT}\", (12, 6))\n\n\n\n\n\n\n\n\nFigure 2: Kappa Архитектура",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Примеры и инструменты"
+    ]
+  },
+  {
+    "objectID": "examples-and-tools.html#инструменты",
+    "href": "examples-and-tools.html#инструменты",
+    "title": "Примеры и инструменты",
+    "section": "Инструменты",
+    "text": "Инструменты\nОт общих представлений о компонентах, из которых состоит Kappa-архитектура, перейдем к конкретным инструментам, которые позволяют реализовать её на практике.\nПример с реальными технологиями представлен на рисунке Figure 3\n\n\nCode\nfrom diagrams import Diagram, Cluster, Edge\nfrom diagrams.onprem.queue import Kafka\nfrom diagrams.onprem.analytics import Flink\nfrom diagrams.onprem.database import Druid\nfrom diagrams.onprem.analytics import Powerbi\n\n\nfilename = TEMP_DIR + \"kappa-tools\"\n\nwith Diagram(\"\", show=False, direction=\"LR\", filename=filename, outformat=FORMAT, curvestyle=\"ortho\"):\n  with Cluster(\"Distribution layer\", direction=\"LR\"):\n    unified_log = Kafka(\"Unified Log\")\n  with Cluster(\"Speed layer\", direction=\"LR\"):\n    streaming_framework = Flink(\"Streaming Framework\")\n  with Cluster(\"Serving layer\", direction=\"LR\"):\n    db = Druid(\"Database\")\n  unified_log &gt;&gt; Edge(label=\"Event\") &gt;&gt; streaming_framework\n  streaming_framework &gt;&gt; Edge(label=\"Aggregate\") &gt;&gt; db\n  with Cluster(\"Analytics\", direction=\"LR\"):\n    bi = Powerbi(\"BI-tool\")\n    db &lt;&lt; Edge(label=\"Query\") &lt;&lt; bi\n\nshow_image(f\"{filename}.{FORMAT}\", (12, 6))\n\n\n\n\n\n\n\n\nFigure 3: Инструменты для реализации Kappa-архитектуры\n\n\n\n\n\n\n1. Distribution Layer\nЭто пожалуй единственный уровень, где мы лишены выбора, ведь технология Apache Kafka стала уже дефакто стандартом индустрии для доставки сообщений от производителей к потребителям.\nApache Kafka - это распределенная платформа для потоковой обработки и передачи данных. Она позволяет эффективно передавать потоки данных, обеспечивая устойчивость и масштабируемость, её ключевые особенности:\n\nСообщения хранятся в именованных топиках, каждый из которых состоит из одной и более партиций, обеспечивающих горизонтальное масштабирование;\nВ рамках партиции порядок сообщений гарантирован, но не в рамках топика;\nСообщения не удаляются после обработки - они продолжают храниться, благодаря чему одно и то же сообщение может быть обработано сколько угодно раз разными консьюмерами и в разных контекстах.\n\nТипичные кейсы использования Apache Kafka:\n\n\n2. Speed Layer\n\nApache Flink\nApache Flink — это платформа распределенной обработки данных, его ключевые особенности:\n\nИспользование состояния (Stateful-потоки обработки данных);\nПоддержка фильтрации, агрегации, группировки, оконных функций и соединения потоков данных;\nИстинно стриминговый фреймворк, что позволяет достичь высокой пропускной способности с низкой задержкой;\nГарантия семантики “только один раз”;\nВосстановление после сбоя с нулевой потерей данных засчет механизма снимков состояния\nМожно писать потоки обработки данных на Java и Python/PyFlink;\nПоддержка пакетного режима;\nИсточники и приемники данных: Apache Kafka, Apache Cassandra, Amazon Kinesis, Apache HBase, HDFS.\n\nНаиболее частые кейсы использования Apache Flink: обогащение, преобразование и мониторинг потоковых данных\n\n\nApache Spark\nApache Spark имеет специальный для стриминга компонент - Spark Streaming, который имеет следующие особенности:\n\nМикробатчинговый стриминг, то есть сначала происходит накопление микробатча данных за некоторый интервал времени (от 500мс до нескольких секунд), а затем их обработка;\nПоддержка фильтрации, агрегации, группировки, оконных функций и соединения потоков данных;\nВосстановление после сбоя и возобновление работы с последней контрольной точки;\nГарантия семантики “только один раз”;\nМожно писать потоки обработки данных на Java и Python/PySpark;\nИзначальное Apache Spark предназначен для пакетного режима;\nИсточники и приемники данных: Apache Kafka, Apache Cassandra, HDFS, OpenStack Swift, Amazon S3, Kudu.\n\n\n\nДругие инструменты\n\nApache Kafka Streams;\nApache Storm;\nSamza;\nGoogle Cloud Dataflow;\nAzure Stream Analytics.\n\n\n\n\n3. Serving Layer\nНа самом деле на это уровне можно использовать любое хранилище для хранение агрегированных/преобразованных данных для последующей аналитики\n\nApache Druid\nApache Druid это распределенная колоночная timeseries OLAP-система, работающая на следующих принципах:\n\nНаличие метки времени в каждой строке данных - timestamp, который монотонно растёт;\nДанные только добавляются, не меняются;\nДанные нарезаются на сегменты, вычисления над которыми могут выполняться параллельно;",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Примеры и инструменты"
+    ]
+  },
+  {
+    "objectID": "examples-and-tools.html#приближение-к-реальности",
+    "href": "examples-and-tools.html#приближение-к-реальности",
+    "title": "Примеры и инструменты",
+    "section": "Приближение к реальности",
+    "text": "Приближение к реальности\nНа рисунке Figure 4 изображена та же архитектура с недостающими важными компонентами.\nТак как мы живем в распределенной системе, то нужен координатор, таковым на схеме является Apache Zokeeper.\nДля Speed Layer добавились:\n\nAmazon S3 для хранения ключевых точек и восстановления Apche Flink после сбоя;\nApache Aerospike для хранения текущего состояния Apche Flink.\n\nДля Serving Layer добавились:\n\nMySQL для хранения метаданных о сегментах;\nHDFS для хранения самих сегментов данных;\nMemcached для использования в качесте кэша.\n\n\n\nCode\nfrom diagrams import Diagram, Cluster, Edge\nfrom diagrams.onprem.queue import Kafka\nfrom diagrams.onprem.analytics import Flink\nfrom diagrams.onprem.database import Druid\nfrom diagrams.onprem.analytics import Powerbi\nfrom diagrams.onprem.analytics import Hadoop\nfrom diagrams.onprem.database import Mysql\nfrom diagrams.onprem.inmemory import Memcached\nfrom diagrams.onprem.network import Zookeeper\nfrom diagrams.onprem.inmemory import Aerospike\nfrom diagrams.aws.storage import SimpleStorageServiceS3\n\nfilename = TEMP_DIR + \"real-kappa-tools\"\n\nwith Diagram(\"\", show=False, direction=\"LR\", filename=filename, outformat=FORMAT, curvestyle=\"ortho\"):\n  coordinator = Zookeeper(\"Coordinator\")\n  with Cluster(\"Distribution layer\", direction=\"LR\"):\n    unified_log = Kafka(\"Unified Log\")\n    unified_log  &gt;&gt; Edge(label=\"\", style=\"dotted\") &gt;&gt; coordinator\n  with Cluster(\"Speed layer\", direction=\"LR\"):\n    s3 = SimpleStorageServiceS3(\"Recovery Storage\")\n    streaming_framework = Flink(\"Streaming Framework\")\n    state = Aerospike(\"State Storage\")\n    streaming_framework &gt;&gt; Edge(label=\"State\", color=\"#9E18FF\") &lt;&lt; state\n    streaming_framework &gt;&gt; Edge(label=\"Key points\", color=\"#9E18FF\") &lt;&lt; s3\n    streaming_framework &gt;&gt; Edge(label=\"\", color=\"#9E18FF\", style=\"dotted\") &gt;&gt; coordinator\n  with Cluster(\"Serving layer\", direction=\"TB\"):\n    storage = Hadoop(\"Segment Storage\")\n    db = Druid(\"Database\")\n    meta = Mysql(\"Metadata Storage\")\n    cache = Memcached(\"Cache\")\n    db &gt;&gt; Edge(label=\"Meta data\", color=\"#02AFB1\") &lt;&lt; meta\n    db &gt;&gt; Edge(label=\"Cached data\", color=\"#02AFB1\") &lt;&lt; cache\n    db &gt;&gt; Edge(label=\"Segment\", color=\"#02AFB1\") &lt;&lt; storage\n    db &gt;&gt; Edge(label=\"\", color=\"#02AFB1\", style=\"dotted\") &gt;&gt; coordinator\n    storage &gt;&gt; Edge(label=\"\", color=\"#02AFB1\", style=\"dotted\") &gt;&gt; coordinator\n  event_bus = Kafka(\"Event Bus\")\n  event_bus  &gt;&gt; Edge(label=\"\", style=\"dotted\") &gt;&gt; coordinator\n  unified_log &gt;&gt; Edge(label=\"Event\") &gt;&gt; streaming_framework\n  streaming_framework &gt;&gt; Edge(label=\"New Event\") &gt;&gt; event_bus\n  event_bus &gt;&gt; Edge(label=\"New Event\") &gt;&gt; db\n  with Cluster(\"Analytics\", direction=\"LR\"):\n    bi = Powerbi(\"BI-tool\")\n    db &lt;&lt; Edge(label=\"Query\") &lt;&lt; bi\n\nshow_image(f\"{filename}.{FORMAT}\", (12, 12))\n\n\n\n\n\n\n\n\nFigure 4: Инструменты для реализации Kappa-архитектуры",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Примеры и инструменты"
+    ]
+  },
+  {
+    "objectID": "examples-and-tools.html#другие-примеры",
+    "href": "examples-and-tools.html#другие-примеры",
+    "title": "Примеры и инструменты",
+    "section": "Другие примеры",
+    "text": "Другие примеры\nАрхитектура Kappa находит применение в различных отраслях и вариантах использования:\n\nАналитика в режиме реального времени;\nДетекция мошеннических операций;\nОбработка данных от IoT-устройств;\nСтриминг логов и событий.",
+    "crumbs": [
+      "О докладе",
+      "Части доклада",
+      "Примеры и инструменты"
+    ]
+  }
+]
