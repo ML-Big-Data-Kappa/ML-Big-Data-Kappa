@@ -1,3 +1,28 @@
 ---
 title: "Полезные материалы"
 ---
+
+## Kappa архитектура
+1. [Habr - Архитектурный паттерн для обработки больших данных: Kappa](https://habr.com/ru/companies/otus/articles/769350/)
+2. [Егор Матешук – Обзор Lambda- и Kappa-архитектур](https://www.youtube.com/watch?v=Ac-XhNB0YrM)
+3. [Big Data School - Что такое Каппа-архитектура: альтернатива Лямбда для потоков Big Data](https://bigdataschool.ru/blog/kappa-architecture.html)
+
+## Технологии для Distribution-уровня
+1. [Habr - Apache Kafka: основы технологии](https://habr.com/ru/companies/slurm/articles/550934/)
+2. [Вадим Опольский - Проблемы приземления данных из Kafka и их решение на Apache Flink](https://www.youtube.com/watch?v=pJnx_O3yy8U)
+
+## Технологии для Speed-уровня
+1. [Habr - Введение в Apache Flink: осваиваем фреймворк на реальных примерах](https://habr.com/ru/companies/ru_mts/articles/772898/)
+2. [Wints - Introduction to Apache Flink](https://wints.github.io/flink-web/introduction.html)
+3. [Caito Scherr - Building a Python Data Pipeline with Apache Flink](https://www.youtube.com/watch?v=WwvpsqyWsc4)
+4. [Habr - Apache Kafka и потоковая обработка данных с помощью Spark Streaming](https://habr.com/ru/articles/451160/)
+5. [Spark School - Что такое Spark Streaming и для чего он нужен](https://spark-school.ru/blog/spark-streaming/)
+6. [Big Data School - Apache Kafka Streams, Spark Streaming, Flink, Storm или Samza: что и когда выбирать для обработки потоков Big Data](https://bigdataschool.ru/blog/choice-factors-4-big-data-streaming.html)
+
+## Технологии для Serving-уровня
+1. [Habr - Особенности использования Druid на примере Одноклассников](https://habr.com/ru/companies/odnoklassniki/articles/420469)
+2. [Big Data School - Kudu](https://bigdataschool.ru/wiki/kudu)
+
+### Технологии для реализации Kappa архитектуры
+1. [Habr - Построение архитектур для обработки данных в режиме реального времени при помощи Apache Kafka, Flink и Druid](https://habr.com/ru/companies/timeweb/articles/783758/)
+2. [Ruhollah Farchtchi - Building Real Time BI Systems with Kafka, Spark & Kudu](https://www.youtube.com/watch?v=mDNGIqV2ThM)

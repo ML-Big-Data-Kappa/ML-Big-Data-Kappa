@@ -18,6 +18,8 @@ website:
     contents:
       - section: "Части доклада"
         contents:
+          - href: examples-and-tools.qmd
+            text: Примеры и инструменты
           - href: links.qmd
             text: Полезные материалы
 format:

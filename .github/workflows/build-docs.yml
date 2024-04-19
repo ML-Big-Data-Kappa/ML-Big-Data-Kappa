@@ -1,0 +1,37 @@
+name: Build docs
+
+on:
+  pull_request:
+    branches: [ "master" ]
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  docs-building:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+      - name: Convert ipynb to qmd format
+        run: |
+          quarto convert notebooks/examples-and-tools.ipynb -o docs/examples-and-tools.qmd
+      - name: Generate html
+        run: |
+          poetry run quarto render docs --to html
+      - name: Publish to GitHub Pages
+        run: |
+          git config --global user.email "daniil.solo1723@gmail.com"
+          git config --global user.name "Daniil-Solo"
+          cd docs
+          poetry run quarto publish gh-pages --no-browser --no-render
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
