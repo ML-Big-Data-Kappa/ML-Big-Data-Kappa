@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Доклад о Kappa Architecture - Примеры и инструменты</title>
+<title>Доклад о Kappa Architecture - Основная часть</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -222,7 +222,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./examples-and-tools.html">Части доклада</a></li><li class="breadcrumb-item"><a href="./examples-and-tools.html">Примеры и инструменты</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Примеры и инструменты</h1>
+<h1 class="title">Основная часть</h1>
 </div>
 
 
@@ -239,7 +239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<div id="23ddf705" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-17T21:35:48.966809800Z&quot;,&quot;start_time&quot;:&quot;2024-04-17T21:35:48.948296500Z&quot;}" data-execution_count="1">
+<div id="35370814" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-22T12:56:37.516080200Z&quot;,&quot;start_time&quot;:&quot;2024-04-22T12:56:36.618114900Z&quot;}" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Serving Layer - хранение агрегированных данных, к которым обращается аналитическая система или BI-инструмент</li>
 </ol>
 <p>Batch Layer и Speed Layer реализуют одну и ту же логику. Batch-слой позволяет получить точные данные, а Speed-слой неплохую интерполяцию в промежутке между пересчетами Batch’ей. Полный пересчет агрегаций легко реализуется с помощью Batch-слоя.</p>
-<div id="cell-fig-lambda-basic" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-18T20:35:15.855112300Z&quot;,&quot;start_time&quot;:&quot;2024-04-18T20:35:15.519497600Z&quot;}" data-execution_count="2">
+<div id="cell-fig-lambda-basic" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-22T12:56:37.966417500Z&quot;,&quot;start_time&quot;:&quot;2024-04-22T12:56:37.518081200Z&quot;}" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diagrams <span class="im">import</span> Diagram, Cluster, Edge</span>
@@ -344,7 +344,7 @@ Figure&nbsp;1: Lambda Архитектура
 <li>Serving Layer - хранение агрегированных данных, к которым обращается аналитическая система или BI-инструмент</li>
 </ol>
 <p>Полный пересчет возможен лишь частично, так как отсутствует полное хранение сырых данных. Пересчет происходит засчет повторного прогона событий из источника данных через Speed-слой.</p>
-<div id="cell-fig-kappa-basic" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-18T20:35:30.967735500Z&quot;,&quot;start_time&quot;:&quot;2024-04-18T20:35:30.812809600Z&quot;}" data-execution_count="3">
+<div id="cell-fig-kappa-basic" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-22T12:56:38.113261Z&quot;,&quot;start_time&quot;:&quot;2024-04-22T12:56:37.965417100Z&quot;}" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diagrams <span class="im">import</span> Diagram, Cluster, Edge</span>
@@ -390,7 +390,7 @@ Figure&nbsp;2: Kappa Архитектура
 <h2 class="anchored" data-anchor-id="инструменты">Инструменты</h2>
 <p>От общих представлений о компонентах, из которых состоит Kappa-архитектура, перейдем к конкретным инструментам, которые позволяют реализовать её на практике.</p>
 <p>Пример с реальными технологиями представлен на рисунке <a href="#fig-kappa-tools" class="quarto-xref">Figure&nbsp;3</a></p>
-<div id="cell-fig-kappa-tools" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-17T22:19:25.190200500Z&quot;,&quot;start_time&quot;:&quot;2024-04-17T22:19:25.025377700Z&quot;}" data-execution_count="4">
+<div id="cell-fig-kappa-tools" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-22T12:56:38.280424Z&quot;,&quot;start_time&quot;:&quot;2024-04-22T12:56:38.115260700Z&quot;}" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diagrams <span class="im">import</span> Diagram, Cluster, Edge</span>
@@ -491,8 +491,16 @@ Figure&nbsp;3: Инструменты для реализации Kappa-архи
 <ul>
 <li>Наличие метки времени в каждой строке данных - timestamp, который монотонно растёт;</li>
 <li>Данные только добавляются, не меняются;</li>
-<li>Данные нарезаются на сегменты, вычисления над которыми могут выполняться параллельно;</li>
-<li></li>
+<li>Данные нарезаются на сегменты, вычисления над которыми могут выполняться параллельно.</li>
+</ul>
+</section>
+<section id="другие-инструменты-1" class="level4">
+<h4 class="anchored" data-anchor-id="другие-инструменты-1">Другие инструменты</h4>
+<ul>
+<li>Apache Kudu;</li>
+<li>RDBMS (PostgreSQL, MySQL, …);</li>
+<li>HDFS;</li>
+<li>S3-подобные системы.</li>
 </ul>
 </section>
 </section>
@@ -512,7 +520,7 @@ Figure&nbsp;3: Инструменты для реализации Kappa-архи
 <li>HDFS для хранения самих сегментов данных;</li>
 <li>Memcached для использования в качесте кэша.</li>
 </ul>
-<div id="cell-fig-real-kappa-tools" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-18T20:35:56.890124100Z&quot;,&quot;start_time&quot;:&quot;2024-04-18T20:35:56.474180900Z&quot;}" data-execution_count="5">
+<div id="cell-fig-real-kappa-tools" class="cell" data-executetime="{&quot;end_time&quot;:&quot;2024-04-22T12:56:38.882087600Z&quot;,&quot;start_time&quot;:&quot;2024-04-22T12:56:38.286423900Z&quot;}" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> diagrams <span class="im">import</span> Diagram, Cluster, Edge</span>
